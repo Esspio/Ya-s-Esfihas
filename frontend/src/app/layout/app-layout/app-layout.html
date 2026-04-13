@@ -1,10 +1,10 @@
-<section class="flex flex-col h-screen w-screen bg-amber-400 gap-2">
+<section class="flex flex-col h-screen w-screen bg-amber-400 gap-2 px-6 py-3">
   <app-topbar class="block w-full bg-blue-500"></app-topbar>
 
   <div class="flex flex-col md:flex-row flex-1 gap-2">
     <app-sidebar class="w-full md:w-1/6 bg-red-500"></app-sidebar>
 
-    <div id="layout-main" class="flex-1 bg-green-500">
+    <div class="flex-1 bg-green-500">
       <router-outlet></router-outlet>
     </div>
   </div>

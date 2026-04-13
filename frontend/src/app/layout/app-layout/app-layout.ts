@@ -8,6 +8,5 @@ import { Footer } from '../footer/footer';
   selector: 'app-app-layout',
   imports: [RouterOutlet, Topbar, Sidebar, Footer],
   templateUrl: './app-layout.html',
-  styleUrl: './app-layout.css',
 })
 export class AppLayout {}
