@@ -14,7 +14,7 @@ Felipe Rocha - E-mail: dev.frocha.esp@gmail.com
 
 - Angular
 - Framework Prime NG
-- Tailwind
+- Tailwind (tailwindcss-primeui)
 
 ### Backend
 
