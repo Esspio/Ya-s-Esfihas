@@ -1,0 +1,24 @@
+.p-menubar {
+  background: transparent !important;
+  border: solid 0.5px #000000;
+}
+
+#container-buttons {
+  --p-menubar-item-color: #000000;
+  --p-menubar-item-icon-color: #000000;
+  --p-menubar-item-focus-background: none;
+  --p-menubar-item-focus-color: #520b8b;
+  --p-menubar-item-icon-focus-color: #520b8b;
+}
+
+#container-buttons .p-menubar {
+  font-size: 1.2rem;
+}
+
+#container-buttons .p-menubar .p-menuitem-icon {
+  font-size: 1.4rem;
+}
+
+#container-buttons .p-menubar .p-menuitem-link {
+  padding: 0.8rem 1.2rem;
+}
