@@ -1,10 +1,7 @@
 import { MESSAGES } from './../../../utils/Messages_json';
 import { Component } from '@angular/core';
-import { BadgeModule } from 'primeng/badge';
-import { PanelMenu, PanelMenuModule } from 'primeng/panelmenu';
-import { RippleModule } from 'primeng/ripple';
 import { MenuItem } from 'primeng/api';
-import { Menu, MenuModule } from 'primeng/menu';
+import { MenuModule } from 'primeng/menu';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,15 +17,15 @@ export class Sidebar {
         items: [
           {
             label: MESSAGES['avulso'],
-            icon: 'pi pi-plus',
+            icon: 'pi pi-plus-circle',
           },
           {
             label: MESSAGES['encomendar'],
-            icon: 'pi pi-search',
+            icon: 'pi pi-ticket',
           },
           {
-            label: MESSAGES['historico'],
-            icon: 'pi pi-search',
+            label: MESSAGES['meus.pedidos'],
+            icon: 'pi pi-shopping-bag',
           },
         ],
       },
@@ -37,12 +34,12 @@ export class Sidebar {
         items: [
           {
             label: MESSAGES['solicitar.orcamento'],
-            icon: 'pi pi-plus',
+            icon: 'pi pi-dollar',
             shortcut: MESSAGES['em.breve'],
           },
           {
             label: MESSAGES['meus.eventos'],
-            icon: 'pi pi-search',
+            icon: 'pi pi-shop',
             shortcut: MESSAGES['em.breve'],
           },
         ],

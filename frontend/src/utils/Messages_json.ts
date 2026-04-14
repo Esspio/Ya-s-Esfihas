@@ -9,7 +9,6 @@ export const MESSAGES = {
   'em.breve': 'Em breve',
   pedidos: 'Pedidos',
   avulso: 'Avulso',
-  historico: 'Histórico',
   eventos: 'Eventos',
   'solicitar.orcamento': 'Novo orçamento',
   'meus.eventos': 'Meus eventos',

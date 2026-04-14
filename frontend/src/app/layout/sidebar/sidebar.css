@@ -5,4 +5,8 @@
   --p-menu-submenu-label-color: #000000;
   --p-menu-submenu-label-font-weight: 700;
   --p-menu-item-icon-color: #000000;
+  --p-content-hover-background: rgb(207, 127, 74);
+  --p-menu-border-color: none;
+
+  --p-menu-item-focus-background: rgb(190, 58, 1);
 }
