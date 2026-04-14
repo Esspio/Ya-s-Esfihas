@@ -18,6 +18,7 @@ export class Sidebar {
           {
             label: MESSAGES['avulso'],
             icon: 'pi pi-plus-circle',
+            shortcut: MESSAGES['em.breve'],
           },
           {
             label: MESSAGES['encomendar'],
@@ -26,6 +27,7 @@ export class Sidebar {
           {
             label: MESSAGES['meus.pedidos'],
             icon: 'pi pi-shopping-bag',
+            shortcut: MESSAGES['em.breve'],
           },
         ],
       },
@@ -65,14 +67,17 @@ export class Sidebar {
           {
             label: MESSAGES['meu.perfil'],
             icon: 'pi pi-user',
+            shortcut: MESSAGES['em.breve'],
           },
           {
             label: MESSAGES['preferencias'],
             icon: 'pi pi-cog',
+            shortcut: MESSAGES['em.breve'],
           },
           {
             label: MESSAGES['sair'],
             icon: 'pi pi-sign-out',
+            shortcut: MESSAGES['em.breve'],
           },
         ],
       },
