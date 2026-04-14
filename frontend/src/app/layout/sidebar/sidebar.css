@@ -1,0 +1,8 @@
+.container-sidebar {
+  --p-menu-background: none;
+  --p-menu-color: #000000;
+  --p-menu-item-color: #000000;
+  --p-menu-submenu-label-color: #000000;
+  --p-menu-submenu-label-font-weight: 700;
+  --p-menu-item-icon-color: #000000;
+}

@@ -1,1 +1,19 @@
-<p>sidebar works!</p>
+<section class="container-sidebar">
+  <div class="w-full">
+    <p-menu [model]="getMenuItemList()">
+      <ng-template #item let-item>
+        <div class="flex items-center">
+          <i [class]="item.icon + ' text-primary group-hover:text-inherit pl-3'"></i>
+          <span class="ms-2">{{ item.label }}</span>
+
+          @if (item.shortcut) {
+            <span
+              class="ms-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1"
+              >{{ item.shortcut }}</span
+            >
+          }
+        </div>
+      </ng-template>
+    </p-menu>
+  </div>
+</section>
