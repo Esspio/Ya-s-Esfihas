@@ -21,7 +21,7 @@ export class Sidebar {
           },
           {
             label: MESSAGES['encomendar'],
-            icon: 'pi pi-ticket',
+            icon: 'pi pi-clipboard',
           },
           {
             label: MESSAGES['meus.pedidos'],

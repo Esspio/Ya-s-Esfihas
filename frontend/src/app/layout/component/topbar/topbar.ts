@@ -28,12 +28,12 @@ export class Topbar {
         icon: 'pi pi-shopping-bag',
       },
       {
-        label: this.messages['favoritos'],
-        icon: 'pi pi-star',
+        label: this.messages['solicitar.orcamento'],
+        icon: 'pi pi-dollar',
       },
       {
-        label: this.messages['chat'],
-        icon: 'pi pi-comments',
+        label: this.messages['whatsapp'],
+        icon: 'pi pi-whatsapp',
       },
       {
         label: this.messages['meu.perfil'],
