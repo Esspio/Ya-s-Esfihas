@@ -28,7 +28,7 @@ export class Topbar {
         icon: 'pi pi-shopping-bag',
       },
       {
-        label: this.messages['solicitar.orcamento'],
+        label: this.messages['novo.orcamento'],
         icon: 'pi pi-dollar',
       },
       {

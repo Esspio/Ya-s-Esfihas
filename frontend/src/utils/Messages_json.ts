@@ -10,7 +10,7 @@ export const MESSAGES = {
   pedidos: 'Pedidos',
   avulso: 'Avulso',
   eventos: 'Eventos',
-  'solicitar.orcamento': 'Novo orçamento',
+  'novo.orcamento': 'Novo orçamento',
   'meus.eventos': 'Meus eventos',
   contato: 'Contato',
   whatsapp: 'Whatsapp',

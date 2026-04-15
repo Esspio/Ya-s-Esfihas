@@ -23,6 +23,7 @@ export class Sidebar {
           {
             label: MESSAGES['encomendar'],
             icon: 'pi pi-clipboard',
+            url: '/encomendar',
           },
           {
             label: MESSAGES['meus.pedidos'],
@@ -35,7 +36,7 @@ export class Sidebar {
         label: MESSAGES['eventos'],
         items: [
           {
-            label: MESSAGES['solicitar.orcamento'],
+            label: MESSAGES['novo.orcamento'],
             icon: 'pi pi-dollar',
             shortcut: MESSAGES['em.breve'],
           },

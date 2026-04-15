@@ -3,8 +3,10 @@
     <p-menu [model]="getMenuItemList()">
       <ng-template #item let-item>
         <div class="flex items-center">
-          <i [class]="item.icon + ' text-black group-hover:text-inherit pl-3'"></i>
-          <span class="ms-3 mb-1">{{ item.label }}</span>
+          <a href="{{ item.url }}">
+            <i [class]="item.icon + ' text-black group-hover:text-inherit pl-3'"></i>
+            <span class="ms-3 mb-1">{{ item.label }}</span>
+          </a>
 
           @if (item.shortcut) {
             <span class="ms-auto border border-black rounded bg-emphasis text-black text-xs p-1">{{
