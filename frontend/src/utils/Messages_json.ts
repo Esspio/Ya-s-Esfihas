@@ -19,4 +19,9 @@ export const MESSAGES = {
   preferencias: 'Preferências',
   sair: 'Sair',
   pesquisar: 'Pesquisar',
+  'nome.do.evento': 'Nome do evento',
+  'tipo.de.evento': 'Tipo de evento',
+  data: 'Data',
+  'numero.de.convidados': 'Número de convidados',
+  observacoes: 'Observações',
 };
