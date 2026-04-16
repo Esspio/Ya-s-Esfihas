@@ -18,4 +18,5 @@ export const MESSAGES = {
   perfil: 'Perfil',
   preferencias: 'Preferências',
   sair: 'Sair',
+  pesquisar: 'Pesquisar',
 };

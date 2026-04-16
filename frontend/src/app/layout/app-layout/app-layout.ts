@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Topbar } from '../component/topbar/topbar';
 import { Sidebar } from '../sidebar/sidebar';
@@ -9,4 +9,11 @@ import { Footer } from '../footer/footer';
   imports: [RouterOutlet, Topbar, Sidebar, Footer],
   templateUrl: './app-layout.html',
 })
-export class AppLayout {}
+export class AppLayout {
+  isDesktop = window.innerWidth >= 768;
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isDesktop = window.innerWidth >= 768;
+  }
+}

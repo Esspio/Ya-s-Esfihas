@@ -1,24 +1,19 @@
-.p-menubar {
-  background: transparent !important;
-  border: solid 0.5px #000000;
+:host ::ng-deep .p-autocomplete .p-inputtext {
+  background-color: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 10px;
+  color: #1f2937;
+  padding: 10px 12px;
+  transition: all 0.2s ease;
 }
 
-#container-buttons {
-  --p-menubar-item-color: #000000;
-  --p-menubar-item-icon-color: #000000;
-  --p-menubar-item-focus-background: none;
-  --p-menubar-item-focus-color: #520b8b;
-  --p-menubar-item-icon-focus-color: #520b8b;
+:host ::ng-deep .p-autocomplete .p-inputtext:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
 }
 
-#container-buttons .p-menubar {
-  font-size: 1.2rem;
-}
-
-#container-buttons .p-menubar .p-menuitem-icon {
-  font-size: 1.4rem;
-}
-
-#container-buttons .p-menubar .p-menuitem-link {
-  padding: 0.8rem 1.2rem;
+:host ::ng-deep .p-autocomplete-dropdown {
+  background: transparent;
+  border: solid 1px black;
+  color: black;
 }

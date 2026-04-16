@@ -2,14 +2,28 @@ import { Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
 import { MESSAGES } from '../../../../utils/Messages_json';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { FormsModule } from '@angular/forms';
+
+interface AutoCompleteCompleteEvent {
+  originalEvent: Event;
+  query: string;
+}
 
 @Component({
   selector: 'app-topbar',
-  imports: [MenubarModule],
+  imports: [AutoCompleteModule, MenubarModule, FormsModule],
   templateUrl: './topbar.html',
   styleUrl: './topbar.css',
 })
 export class Topbar {
+  items2: any[] = [];
+  value: any;
+
+  search(event: AutoCompleteCompleteEvent) {
+    this.items2 = [...Array(10).keys()].map((item) => event.query + '-' + item);
+  }
+
   items: MenuItem[] | undefined;
   messages = MESSAGES;
 

@@ -1,5 +1,5 @@
-<section class="container-app-layout flex flex-col h-screen w-screen">
-  <app-topbar class="block w-full bg-orange-600"></app-topbar>
+<section class="container-app-layout flex flex-col h-screen">
+  <app-topbar class="block w-full"></app-topbar>
 
   <div class="flex flex-col md:flex-row flex-1">
     <app-sidebar class="w-full md:w-1/6 bg-orange-600"></app-sidebar>
@@ -7,7 +7,11 @@
     <div class="flex-1 p-3">
       <router-outlet></router-outlet>
     </div>
-  </div>
 
-  <app-footer class="block w-full bg-orange-600 border-t border-black"></app-footer>
+    @if (!isDesktop) {
+      <div class="container-footer">
+        <app-footer class="block w-full bg-orange-600 border-t border-black"></app-footer>
+      </div>
+    }
+  </div>
 </section>

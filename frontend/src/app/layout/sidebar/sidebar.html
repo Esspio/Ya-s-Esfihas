@@ -1,5 +1,7 @@
-<section class="container-sidebar border-x border-black h-full">
-  <div class="w-full">
+<section
+  class="container-sidebar border-x border-black h-full flex flex-col justify-between bg-[#ea580c]"
+>
+  <div class="container-menu w-full">
     <p-menu [model]="getMenuItemList()">
       <ng-template #item let-item>
         <div class="flex items-center">
@@ -17,4 +19,10 @@
       </ng-template>
     </p-menu>
   </div>
+
+  @if (isDesktop) {
+    <div class="container-footer bg-[#ea580c]">
+      <app-footer class="block w-full border-t border-black"></app-footer>
+    </div>
+  }
 </section>

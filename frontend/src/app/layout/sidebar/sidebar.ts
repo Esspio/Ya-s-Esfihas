@@ -1,11 +1,12 @@
 import { MESSAGES } from './../../../utils/Messages_json';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenuModule } from 'primeng/menu';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [MenuModule],
+  imports: [MenuModule, Footer],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })
@@ -83,5 +84,12 @@ export class Sidebar {
         ],
       },
     ];
+  }
+
+  isDesktop = window.innerWidth >= 768;
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isDesktop = window.innerWidth >= 768;
   }
 }
