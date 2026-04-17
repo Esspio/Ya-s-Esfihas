@@ -1,6 +1,11 @@
 <section class="container-encomendar h-full">
-  <div class="bg-amber-500 h-full w-full">
-    <span class="flex justify-center items-center">{{ messages['novo.orcamento'] }}</span>
-    <fieldset class="container-inputs"></fieldset>
+  <div class="bg-light-color h-full w-full">
+    <span class="flex justify-center items-center text-3xl">{{ messages['novo.orcamento'] }}</span>
+    <fieldset class="container-inputs">
+      <p-floatlabel variant="on">
+        <input pInputText id="on_label" [(ngModel)]="value1" autocomplete="off" />
+        <label for="on_label">{{ messages['nome.do.evento'] }}</label>
+      </p-floatlabel>
+    </fieldset>
   </div>
 </section>
