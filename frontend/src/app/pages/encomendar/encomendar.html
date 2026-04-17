@@ -1,11 +1,68 @@
 <section class="container-encomendar h-full">
   <div class="bg-light-color h-full w-full">
-    <span class="flex justify-center items-center text-3xl">{{ messages['novo.orcamento'] }}</span>
     <fieldset class="container-inputs">
-      <p-floatlabel variant="on">
-        <input pInputText id="on_label" [(ngModel)]="value1" autocomplete="off" />
-        <label for="on_label">{{ messages['nome.do.evento'] }}</label>
-      </p-floatlabel>
+      <!-- class="flex justify-center items-center text-3xl" -->
+      <p-card header="{{ messages['novo.orcamento'] }}">
+        <span>{{ messages['insira.dados.evento'] }}</span>
+
+        <div class="input-nome-evento">
+          <label for="ipt-nome-evento">{{ messages['nome'] }}</label>
+          <input
+            pInputText
+            id="ipt-nome-evento"
+            [value]="this.encomendarForm().nome"
+            (input)="formUtils.updateField(this.encomendarForm, 'nome', $event.target.value)"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="input-data-evento">
+          <label for="ipt-data-evento">{{ messages['data'] }}</label>
+          <p-datepicker
+            [(ngModel)]="value3"
+            inputId="ipt-data-evento"
+            showIcon
+            iconDisplay="input"
+          />
+        </div>
+
+        <div class="input-tipo-evento card flex justify-center">
+          <label for="select-tipo-evento">{{ messages['tipo'] }}</label>
+          <p-select
+            [(ngModel)]="value3"
+            inputId="select-tipo-evento"
+            [options]="cities"
+            optionLabel="name"
+            class="w-full"
+          />
+        </div>
+
+        <div class="input-numero-convidados">
+          <label for="ipt-numero-convidados">{{ messages['numero.convidados'] }}</label>
+          <p-inputnumber
+            [(ngModel)]="value3"
+            inputId="ipt-numero-convidados"
+            mode="currency"
+            currency="USD"
+            locale="en-US"
+          />
+        </div>
+
+        <div class="input-observacoes">
+          <label for="textarea-observacoes">{{ messages['observacoes'] }}</label>
+          <textarea
+            pTextarea
+            id="textarea-observacoes"
+            [value]="this.encomendarForm().observacoes"
+            (input)="formUtils.updateField(this.encomendarForm, 'observacoes', $event.target.value)"
+            rows="5"
+            cols="30"
+            style="resize: none"
+            class="h-full"
+            fluid
+          ></textarea>
+        </div>
+      </p-card>
     </fieldset>
   </div>
 </section>

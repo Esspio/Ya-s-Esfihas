@@ -1,4 +1,4 @@
-import { MESSAGES } from './../../../utils/Messages_json';
+import { MESSAGES } from '../../shared/utils/Messages_json';
 import { Component, HostListener } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenuModule } from 'primeng/menu';

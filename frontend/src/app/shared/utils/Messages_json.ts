@@ -19,9 +19,10 @@ export const MESSAGES = {
   preferencias: 'Preferências',
   sair: 'Sair',
   pesquisar: 'Pesquisar',
-  'nome.do.evento': 'Nome do evento',
-  'tipo.de.evento': 'Tipo de evento',
+  'insira.dados.evento': 'Insira os dados do seu evento abaixo',
+  nome: 'Nome ',
+  tipo: 'Tipo',
   data: 'Data',
-  'numero.de.convidados': 'Número de convidados',
+  'numero.convidados': 'Número de convidados',
   observacoes: 'Observações',
 };
