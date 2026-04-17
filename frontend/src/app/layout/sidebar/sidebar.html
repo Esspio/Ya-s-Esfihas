@@ -1,5 +1,5 @@
 <section
-  class="container-sidebar border-x border-black h-full flex flex-col justify-between bg-[#ea580c]"
+  class="container-sidebar border-x border-black h-full flex flex-col justify-between bg-surface-color"
 >
   <div class="container-menu w-full">
     <p-menu [model]="getMenuItemList()">
@@ -21,7 +21,7 @@
   </div>
 
   @if (isDesktop) {
-    <div class="container-footer bg-[#ea580c]">
+    <div class="container-footer">
       <app-footer class="block w-full border-t border-black"></app-footer>
     </div>
   }

@@ -1,5 +1,5 @@
 :host ::ng-deep .p-autocomplete .p-inputtext {
-  background-color: #fff7ed;
+  background-color: var(--color-light-color);
   border: 1px solid #fed7aa;
   border-radius: 10px;
   color: #1f2937;
@@ -16,4 +16,8 @@
   background: transparent;
   border: solid 1px black;
   color: black;
+}
+
+.container-nome-app span {
+  font-family: 'Namdhinggo', serif;
 }
