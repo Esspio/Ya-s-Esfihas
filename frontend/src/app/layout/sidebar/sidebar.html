@@ -4,14 +4,14 @@
   <div class="container-menu w-full">
     <p-menu [model]="getMenuItemList()">
       <ng-template #item let-item>
-        <div class="flex items-center">
+        <div class="flex items-center py-1">
           <a href="{{ item.url }}">
-            <i [class]="item.icon + ' text-black group-hover:text-inherit pl-3'"></i>
+            <i [class]="item.icon + ' text-white group-hover:text-inherit pl-6'"></i>
             <span class="ms-3 mb-1">{{ item.label }}</span>
           </a>
 
           @if (item.shortcut) {
-            <span class="ms-auto border border-black rounded bg-emphasis text-black text-xs p-1">{{
+            <span class="ms-auto border border-black rounded bg-emphasis text-xs p-1">{{
               item.shortcut
             }}</span>
           }

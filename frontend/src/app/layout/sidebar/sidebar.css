@@ -1,12 +1,13 @@
 .container-sidebar {
   --p-menu-background: none;
-  --p-menu-color: #000000;
-  --p-menu-item-color: #000000;
-  --p-menu-submenu-label-color: #000000;
-  --p-menu-submenu-label-font-weight: 700;
-  --p-menu-item-icon-color: #000000;
-  --p-content-hover-background: rgb(207, 127, 74);
+  --p-menu-color: var(--color-white);
+  --p-menu-submenu-label-color: var(--color-white);
+  --p-content-hover-background: var(--color-light-color);
   --p-menu-border-color: none;
+  --p-menu-item-focus-background: var(--color-light-color);
+}
 
-  --p-menu-item-focus-background: rgb(190, 58, 1);
+::ng-deep .p-menu-submenu-label span {
+  font-size: large;
+  font-weight: 800;
 }

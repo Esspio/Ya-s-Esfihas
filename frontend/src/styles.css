@@ -4,8 +4,19 @@
 @import 'tailwindcss-primeui';
 @import 'primeicons/primeicons.css';
 
+@theme {
+  --color-primary-color: #ff5a00;
+  --color-secondar-colory: #cc4800;
+  --color-background-color: #4d230d;
+  --color-surface-color: #802d00;
+  --color-light-color: #ff8b4d;
+  --color-white: #ffffff;
+  --color-black: #111111;
+  --color-gray: rgb(199, 194, 194);
+}
+
 .container-app-layout {
-  background-color: white;
+  background-color: var(--color-white);
 }
 
 span,
@@ -14,13 +25,5 @@ p {
   font-family: 'Kumbh Sans', sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: white;
-}
-
-@theme {
-  --color-primary-color: #ff5a00;
-  --color-secondar-colory: #cc4800;
-  --color-background-color: #4d230d;
-  --color-surface-color: #802d00;
-  --color-light-color: #ff8b4d;
+  color: var(--color-white);
 }
