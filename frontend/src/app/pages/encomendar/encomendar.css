@@ -1,0 +1,8 @@
+:host ::ng-deep .btn-salvar {
+  background: var(--color-primary-color) !important;
+  border-color: var(--color-zinc) !important;
+}
+
+:host ::ng-deep .btn-limpar {
+  border-color: var(--color-zinc) !important;
+}

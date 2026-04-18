@@ -10,9 +10,12 @@
   --color-background-color: #4d230d;
   --color-surface-color: #802d00;
   --color-light-color: #ff8b4d;
+  --color-very-light-color: #fcc1a1;
   --color-white: #ffffff;
   --color-black: #111111;
   --color-gray: rgb(199, 194, 194);
+  --color-zinc: #52525b;
+  --color-zinc-950: #09090b;
 }
 
 .container-app-layout {

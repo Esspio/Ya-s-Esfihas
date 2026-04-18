@@ -1,69 +1,109 @@
-<section class="container-encomendar h-full">
-  <div class="bg-light-color h-full w-full">
-    <fieldset class="container-inputs">
-      <!-- class="flex justify-center items-center text-3xl" -->
-      <p-card header="{{ messages['novo.orcamento'] }}">
-        <span>{{ messages['insira.dados.evento'] }}</span>
+<section class="flex justify-center items-start w-full h-full py-6 px-4 bg-very-light-color">
+  <div class="w-full max-w-7xl">
+    <h2 class="text-2xl font-semibold mb-6">
+      {{ messages['encomendar'] }}
+    </h2>
 
-        <div class="input-nome-evento">
-          <label for="ipt-nome-evento">{{ messages['nome'] }}</label>
-          <input
-            pInputText
-            id="ipt-nome-evento"
-            autocomplete="off"
-            [value]="this.encomendarForm().nome"
-            (input)="formUtils.updateField(this.encomendarForm, 'nome', $event.target.value)"
-          />
-        </div>
+    <p-card>
+      <span class="block mb-6 text-sm text-gray-600">
+        {{ messages['insira.dados.evento'] }}
+      </span>
 
-        <div class="input-data-evento">
-          <label for="ipt-data-evento">{{ messages['data'] }}</label>
+      <div class="flex flex-col mb-4">
+        <label for="ipt-nome-evento" class="mb-2 font-medium">
+          {{ messages['nome'] }}
+        </label>
+        <input
+          pInputText
+          id="ipt-nome-evento"
+          class="w-full"
+          autocomplete="off"
+          [value]="this.encomendarForm().nome"
+          (input)="formUtils.updateField(this.encomendarForm, 'nome', $event.target.value)"
+          placeholder="{{ messages['informe.nome.seu.evento'] }}"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div class="flex flex-col">
+          <label for="ipt-data-evento" class="mb-2 font-medium">
+            {{ messages['data'] }}
+          </label>
           <p-datepicker
             inputId="ipt-data-evento"
             showIcon
             iconDisplay="input"
             dateFormat="dd/mm/yy"
+            class="w-full"
             (onSelect)="onSelectDataEvento($event)"
+            placeholder="{{ messages['selecione.data.evento'] }}"
           />
         </div>
 
-        <div class="input-tipo-evento card flex justify-center">
-          <label for="select-tipo-evento">{{ messages['tipo'] }}</label>
+        <div class="flex flex-col">
+          <label id="select-tipo-evento" class="mb-2 font-medium">
+            {{ messages['tipo'] }}
+          </label>
           <p-select
             class="w-full"
+            aria-labelledby="label-tipo-evento"
             inputId="select-tipo-evento"
             [options]="tipoEventoList"
             optionLabel="nome"
+            placeholder="Selecione o tipo"
             (onChange)="this.formUtils.updateField(this.encomendarForm, 'tipoEvento', $event.value)"
           />
         </div>
+      </div>
 
-        <div class="input-quantidade-convidados">
-          <label for="ipt-quantidade-convidados">{{ messages['quantidade.convidados'] }}</label>
-          <p-inputnumber
-            inputId="ipt-quantidade-convidados"
-            [showClear]="true"
-            for="integeronly"
-            [min]="0"
-            (onInput)="onInputNumeroConvidados($event)"
-          />
-        </div>
+      <div class="flex flex-col mb-4">
+        <label for="ipt-quantidade-convidados" class="mb-2 font-medium">
+          {{ messages['quantidade.convidados'] }}
+        </label>
+        <p-inputnumber
+          inputId="ipt-quantidade-convidados"
+          class="w-full"
+          [min]="0"
+          placeholder="Ex: 50"
+          (onInput)="onInputNumeroConvidados($event)"
+        />
+      </div>
 
-        <div class="input-observacoes">
-          <label for="textarea-observacoes">{{ messages['observacoes'] }}</label>
-          <textarea
-            pTextarea
-            id="textarea-observacoes"
-            rows="5"
-            cols="30"
-            style="resize: none"
-            class="h-full"
-            fluid
-            [value]="this.encomendarForm().observacoes"
-            (input)="onObservacoesChange($event)"
-          ></textarea>
-        </div>
-      </p-card>
-    </fieldset>
+      <div class="flex flex-col mb-6">
+        <label for="textarea-observacoes" class="mb-2 font-medium">
+          {{ messages['observacoes'] }}
+        </label>
+        <textarea
+          pTextarea
+          id="textarea-observacoes"
+          rows="4"
+          class="w-full border border-zinc rounded-md bg-zinc-950"
+          [value]="this.encomendarForm().observacoes"
+          (input)="onObservacoesChange($event)"
+        ></textarea>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4">
+        <button
+          pButton
+          type="button"
+          [raised]="true"
+          icon="pi pi-check-circle"
+          class="w-full md:w-1/2 btn-salvar"
+          label="{{ messages['salvar.encomenda'] }}"
+        ></button>
+
+        <button
+          pButton
+          type="button"
+          severity="secondary"
+          [raised]="true"
+          variant="outlined"
+          icon="pi pi-trash"
+          class="w-full md:w-1/2 btn-limpar"
+          label="{{ messages['limpar'] }}"
+        ></button>
+      </div>
+    </p-card>
   </div>
 </section>

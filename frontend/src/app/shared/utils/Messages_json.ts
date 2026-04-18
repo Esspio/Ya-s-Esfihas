@@ -25,4 +25,10 @@ export const MESSAGES = {
   data: 'Data',
   'quantidade.convidados': 'Quantidade de convidados',
   observacoes: 'Observações',
+  'nenhum.resultado.encontrado': 'Nenhum resultado encontrado',
+  'digite.tres.pontos': 'Digite...',
+  'informe.nome.seu.evento': 'Informe o nome do seu evento',
+  'selecione.data.evento': 'Selecione a data do evento',
+  'salvar.encomenda': 'Salvar encomenda',
+  limpar: 'Limpar',
 };

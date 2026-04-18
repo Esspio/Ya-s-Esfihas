@@ -11,6 +11,7 @@ import { EncomendarForm } from '../../shared/models/EncomendarForm';
 import { FormUtils } from '../../shared/utils/FormUtils';
 import { ITipoEvento } from '../../shared/models/TipoEvento';
 import { EncomendarService } from '../../core/services/EncomendarService';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-encomendar',
@@ -22,6 +23,7 @@ import { EncomendarService } from '../../core/services/EncomendarService';
     DatePickerModule,
     SelectModule,
     CardModule,
+    ButtonModule,
   ],
   templateUrl: './encomendar.html',
   styleUrl: './encomendar.css',
