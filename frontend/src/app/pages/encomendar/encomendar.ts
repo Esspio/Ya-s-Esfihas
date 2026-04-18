@@ -3,17 +3,14 @@ import { Component, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
-import { InputNumberModule } from 'primeng/inputnumber';
+import { InputNumberInputEvent, InputNumberModule } from 'primeng/inputnumber';
 import { DatePickerModule } from 'primeng/datepicker';
 import { SelectModule } from 'primeng/select';
 import { CardModule } from 'primeng/card';
-import { EncomendarForm } from '../../shared/models/EncomendarForm.model';
+import { EncomendarForm } from '../../shared/models/EncomendarForm';
 import { FormUtils } from '../../shared/utils/FormUtils';
-
-interface City {
-  name: string;
-  code: string;
-}
+import { ITipoEvento } from '../../shared/models/TipoEvento';
+import { EncomendarService } from '../../core/services/EncomendarService';
 
 @Component({
   selector: 'app-encomendar',
@@ -32,34 +29,32 @@ interface City {
 export class Encomendar implements OnInit {
   messages = MESSAGES;
   formUtils = FormUtils;
+  tipoEventoList!: ITipoEvento[];
 
   encomendarForm = signal<EncomendarForm>({
     nome: '',
     data: new Date(),
-    tipo: { nome: '', codigo: '' },
-    numeroConvidados: 0,
+    tipoEvento: { nome: '', codigo: '' },
+    quantidadeConvidados: 0,
     observacoes: '',
   });
 
-  value1: string | undefined;
-  value3: Date | undefined;
+  constructor(private service: EncomendarService) {}
 
-  cities!: City[];
-  selectedCity: City | undefined;
+  onSelectDataEvento(event: Date) {
+    this.formUtils.updateField(this.encomendarForm, 'data', event);
+  }
+
+  onInputNumeroConvidados(event: InputNumberInputEvent) {
+    this.formUtils.updateField(this.encomendarForm, 'quantidadeConvidados', Number(event.value));
+  }
 
   onObservacoesChange(event: Event) {
     const value = (event.target as HTMLTextAreaElement).value;
-
     this.formUtils.updateField(this.encomendarForm, 'observacoes', value);
   }
 
   ngOnInit() {
-    this.cities = [
-      { name: 'New York', code: 'NY' },
-      { name: 'Rome', code: 'RM' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Paris', code: 'PRS' },
-    ];
+    this.tipoEventoList = this.service.fetchTipoEventoList();
   }
 }

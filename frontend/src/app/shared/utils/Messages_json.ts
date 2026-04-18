@@ -23,6 +23,6 @@ export const MESSAGES = {
   nome: 'Nome ',
   tipo: 'Tipo',
   data: 'Data',
-  'numero.convidados': 'Número de convidados',
+  'quantidade.convidados': 'Quantidade de convidados',
   observacoes: 'Observações',
 };

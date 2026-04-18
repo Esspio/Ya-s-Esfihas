@@ -10,41 +10,42 @@
           <input
             pInputText
             id="ipt-nome-evento"
+            autocomplete="off"
             [value]="this.encomendarForm().nome"
             (input)="formUtils.updateField(this.encomendarForm, 'nome', $event.target.value)"
-            autocomplete="off"
           />
         </div>
 
         <div class="input-data-evento">
           <label for="ipt-data-evento">{{ messages['data'] }}</label>
           <p-datepicker
-            [(ngModel)]="value3"
             inputId="ipt-data-evento"
             showIcon
             iconDisplay="input"
+            dateFormat="dd/mm/yy"
+            (onSelect)="onSelectDataEvento($event)"
           />
         </div>
 
         <div class="input-tipo-evento card flex justify-center">
           <label for="select-tipo-evento">{{ messages['tipo'] }}</label>
           <p-select
-            [(ngModel)]="value3"
-            inputId="select-tipo-evento"
-            [options]="cities"
-            optionLabel="name"
             class="w-full"
+            inputId="select-tipo-evento"
+            [options]="tipoEventoList"
+            optionLabel="nome"
+            (onChange)="this.formUtils.updateField(this.encomendarForm, 'tipoEvento', $event.value)"
           />
         </div>
 
-        <div class="input-numero-convidados">
-          <label for="ipt-numero-convidados">{{ messages['numero.convidados'] }}</label>
+        <div class="input-quantidade-convidados">
+          <label for="ipt-quantidade-convidados">{{ messages['quantidade.convidados'] }}</label>
           <p-inputnumber
-            [(ngModel)]="value3"
-            inputId="ipt-numero-convidados"
-            mode="currency"
-            currency="USD"
-            locale="en-US"
+            inputId="ipt-quantidade-convidados"
+            [showClear]="true"
+            for="integeronly"
+            [min]="0"
+            (onInput)="onInputNumeroConvidados($event)"
           />
         </div>
 
@@ -53,13 +54,13 @@
           <textarea
             pTextarea
             id="textarea-observacoes"
-            [value]="this.encomendarForm().observacoes"
-            (input)="onObservacoesChange($event)"
             rows="5"
             cols="30"
             style="resize: none"
             class="h-full"
             fluid
+            [value]="this.encomendarForm().observacoes"
+            (input)="onObservacoesChange($event)"
           ></textarea>
         </div>
       </p-card>
