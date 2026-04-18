@@ -1,8 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Topbar } from '../component/topbar/topbar';
-import { Sidebar } from '../sidebar/sidebar';
-import { Footer } from '../footer/footer';
+import { Topbar } from '../../components/topbar/topbar';
+import { Sidebar } from '../../components/sidebar/sidebar';
+import { Footer } from '../../components/footer/footer';
 
 @Component({
   selector: 'app-app-layout',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
-import { MESSAGES } from '../../../shared/utils/Messages_json';
+import { MESSAGES } from '../../shared/utils/Messages_json';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { FormsModule } from '@angular/forms';
 

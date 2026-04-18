@@ -47,6 +47,12 @@ export class Encomendar implements OnInit {
   cities!: City[];
   selectedCity: City | undefined;
 
+  onObservacoesChange(event: Event) {
+    const value = (event.target as HTMLTextAreaElement).value;
+
+    this.formUtils.updateField(this.encomendarForm, 'observacoes', value);
+  }
+
   ngOnInit() {
     this.cities = [
       { name: 'New York', code: 'NY' },

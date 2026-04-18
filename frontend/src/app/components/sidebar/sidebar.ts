@@ -2,7 +2,7 @@ import { MESSAGES } from '../../shared/utils/Messages_json';
 import { Component, HostListener } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenuModule } from 'primeng/menu';
-import { Footer } from '../footer/footer';
+import { Footer } from '../../components/footer/footer';
 
 @Component({
   selector: 'app-sidebar',

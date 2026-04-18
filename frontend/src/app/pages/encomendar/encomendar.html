@@ -54,7 +54,7 @@
             pTextarea
             id="textarea-observacoes"
             [value]="this.encomendarForm().observacoes"
-            (input)="formUtils.updateField(this.encomendarForm, 'observacoes', $event.target.value)"
+            (input)="onObservacoesChange($event)"
             rows="5"
             cols="30"
             style="resize: none"
