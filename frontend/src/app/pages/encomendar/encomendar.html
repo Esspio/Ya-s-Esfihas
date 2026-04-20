@@ -18,8 +18,7 @@
           id="ipt-nome-evento"
           class="w-full"
           autocomplete="off"
-          [value]="this.encomendarForm().nome"
-          (input)="formUtils.updateField(this.encomendarForm, 'nome', $event.target.value)"
+          (input)="formUtils.updateField(this.encomendarForm, 'nomeEvento', $event.target.value)"
           placeholder="{{ messages['informe.nome.seu.evento'] }}"
         />
       </div>
@@ -91,6 +90,7 @@
           icon="pi pi-check-circle"
           class="w-full md:w-1/2 btn-salvar"
           label="{{ messages['salvar.encomenda'] }}"
+          (click)="onSubmit()"
         ></button>
 
         <button

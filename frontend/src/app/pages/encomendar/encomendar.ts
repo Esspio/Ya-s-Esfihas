@@ -12,6 +12,7 @@ import { FormUtils } from '../../shared/utils/FormUtils';
 import { ITipoEvento } from '../../shared/models/TipoEvento';
 import { EncomendarService } from '../../core/services/EncomendarService';
 import { ButtonModule } from 'primeng/button';
+import { EncomendaMapper } from '../../shared/mapper/EncomendaMapper';
 
 @Component({
   selector: 'app-encomendar',
@@ -34,7 +35,7 @@ export class Encomendar implements OnInit {
   tipoEventoList!: ITipoEvento[];
 
   encomendarForm = signal<EncomendarForm>({
-    nome: '',
+    nomeEvento: '',
     data: new Date(),
     tipoEvento: { nome: '', codigo: '' },
     quantidadeConvidados: 0,
@@ -54,6 +55,13 @@ export class Encomendar implements OnInit {
   onObservacoesChange(event: Event) {
     const value = (event.target as HTMLTextAreaElement).value;
     this.formUtils.updateField(this.encomendarForm, 'observacoes', value);
+  }
+
+  onSubmit() {
+    this.service.salvarEncomenda(EncomendaMapper.toRequestDTO(this.encomendarForm())).subscribe({
+      next: (res) => console.log('ok', res),
+      error: (err) => console.error(err),
+    });
   }
 
   ngOnInit() {
