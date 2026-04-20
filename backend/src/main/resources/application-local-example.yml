@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:{url_banco}
+    username: {username_banco}
+    password: {password_banco}
