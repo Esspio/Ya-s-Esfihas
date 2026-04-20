@@ -113,3 +113,15 @@ spring-boot:run
 Com base no arquivo disponibilizado application-local-example.yml, altere os dados entre chaves {} no arquivo pelos dados de acesso ao banco.
 
 Lembrete: este arquivo **NÃO** deve ser versionado. Deve ser usado apenas em desenvolvimento local.
+
+### Lombok
+
+O projeto está utilizando Lombok. Caso acusado erro de getters/setters, realizar o procedimento abaixo:
+
+- Feche a IDE;
+- Faça o download do Lombok;
+- Execute o arquivo e selecione o local de instalação da IDE;
+- (IDE Eclipse) Após execução, na pasta de instalação do Eclipse, verifique se foi incluído o trecho a seguir no arquivo eclipse.ini: '-javaagent:F:\EclipseIDE\lombok.jar'. Se sim, prossiga. Se não, refaça os passos anteriores;
+- Após execução, abra novamente a IDE;
+- (IDE Eclipse) Clique na opção "Project" e depois em "Clean";
+- Inicie a aplicação e verifique se todos os erros foram corrigidos.
