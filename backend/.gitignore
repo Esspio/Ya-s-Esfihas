@@ -1,0 +1,77 @@
+# =========================
+# SPRING BOOT / JAVA
+# =========================
+
+# Compilação
+
+*.class
+
+# Pacotes gerados
+
+*.jar
+*.war
+*.ear
+
+# Logs
+
+*.log
+
+# =========================
+# BUILD TOOLS
+# =========================
+
+# Maven
+
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+
+.gradle/
+/build/
+
+# =========================
+# SPRING BOOT
+# =========================
+
+# DevTools
+
+.restart
+
+# Arquivos de configuração sensíveis
+application-local.yml
+
+# =========================
+# BANCO DE DADOS (LOCAL)
+# =========================
+
+# H2
+
+*.h2.db
+*.trace.db
+
+# =========================
+# IDEs
+# =========================
+
+# IntelliJ
+
+.idea/
+*.iml
+
+# Eclipse
+
+.project
+.classpath
+.settings/
+
+# VSCode
+
+.vscode/
+
+# =========================
+# SISTEMA
+# =========================
+
+.DS_Store
+Thumbs.db
