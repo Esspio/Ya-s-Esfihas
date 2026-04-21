@@ -31,4 +31,10 @@ export const MESSAGES = {
   'selecione.data.evento': 'Selecione a data do evento',
   'salvar.encomenda': 'Salvar encomenda',
   limpar: 'Limpar',
+  sucesso: 'Sucesso',
+  informativo: 'Informativo',
+  aviso: 'Aviso',
+  'ocorreu.um.erro': 'Ocorreu um erro',
+  'encomenda.salva.com.sucesso': 'Encomenda salva com sucesso!',
+  'erro.ao.salvar.encomenda': 'Ocorreu um erro ao salvar a encomenda.',
 };
