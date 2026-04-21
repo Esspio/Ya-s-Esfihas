@@ -1,8 +1,11 @@
 package com.esp.yas_esfihas.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -14,21 +17,21 @@ import lombok.Setter;
 @Table(name = "encomenda")
 public class Encomenda {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(name = "txt_nomeEvento")
+    @Column(name = "txt_nome_evento")
 	private String nomeEvento;
 	
 	@Column(name = "dt_evento")
-	private String data;
+	private LocalDate data;
 	
-	@Column(name = "cd_tipoEvento")
+	@Column(name = "cd_tipo_evento")
 	private String codigoTipoEvento;
 	
-	@Column(name = "CRIAR_COLUNA_BANCO")
+	@Column(name = "num_quantidade_convidados")
 	private int quantidadeConvidados;
 	
-	@Column(name = "CRIAR_COLUNA_BANCO")
+	@Column(name = "txt_observacoes")
 	private String observacoes;
 }
