@@ -34,4 +34,10 @@ public class Encomenda {
 	
 	@Column(name = "txt_observacoes")
 	private String observacoes;
+	
+	@Column(name = "cd_usuario")
+	private String codigoUsuario;
+	
+	@Column(name = "dt_hr_pedido")
+	private Long dataHoraPedido;
 }
