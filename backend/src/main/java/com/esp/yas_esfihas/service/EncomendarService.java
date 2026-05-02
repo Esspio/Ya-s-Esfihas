@@ -25,8 +25,9 @@ public class EncomendarService {
 		encomenda.setCodigoTipoEvento(dto.getCodigoTipoEvento());
 		encomenda.setQuantidadeConvidados(dto.getQuantidadeConvidados());
 		encomenda.setObservacoes(dto.getObservacoes());
+		encomenda.setCodigoUsuario(dto.getCodigoUsuario());
+		encomenda.setDataHoraPedido(dto.getDataHoraPedido());
 		
-		
-		repository.save(encomenda);
+//		repository.save(encomenda);
 	}
 }

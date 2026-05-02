@@ -9,6 +9,8 @@ export class EncomendaMapper {
       codigoTipoEvento: form.tipoEvento.codigo,
       quantidadeConvidados: form.quantidadeConvidados,
       observacoes: form.observacoes,
+      codigoUsuario: form.codigoUsuario,
+      dataHoraPedido: new Date().toISOString(),
     };
   }
 }

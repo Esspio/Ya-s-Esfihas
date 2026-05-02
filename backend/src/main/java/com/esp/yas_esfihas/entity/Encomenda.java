@@ -1,5 +1,6 @@
 package com.esp.yas_esfihas.entity;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
@@ -39,5 +40,5 @@ public class Encomenda {
 	private String codigoUsuario;
 	
 	@Column(name = "dt_hr_pedido")
-	private Long dataHoraPedido;
+	private Instant dataHoraPedido;
 }

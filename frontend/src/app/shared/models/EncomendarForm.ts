@@ -6,6 +6,6 @@ export interface EncomendarForm {
   tipoEvento: ITipoEvento;
   quantidadeConvidados: Number;
   observacoes: string;
-  codigoUsuario: Number;
-  dataHoraPedido: Number;
+  codigoUsuario: string;
+  dataHoraPedido: string;
 }

@@ -42,8 +42,8 @@ export class Encomendar implements OnInit {
     tipoEvento: { nome: '', codigo: '' },
     quantidadeConvidados: 0,
     observacoes: '',
-    codigoUsuario: 0,
-    dataHoraPedido: 0,
+    codigoUsuario: '',
+    dataHoraPedido: '',
   });
 
   constructor(
