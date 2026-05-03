@@ -17,7 +17,7 @@ export class EncomendarService {
     return this.http.post(`${this.baseUrl}/insert`, dto);
   }
 
-  fetchTipoEventoList(): Observable<ITipoEvento[]> {
+  getTipoEventoList(): Observable<ITipoEvento[]> {
     return this.http.get<ITipoEvento[]>(`${this.baseUrl}/get-tipo-evento-list`);
   }
 }

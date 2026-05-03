@@ -47,7 +47,7 @@
             class="w-full"
             aria-labelledby="label-tipo-evento"
             inputId="select-tipo-evento"
-            [options]="tipoEventoList"
+            [options]="tipoEventoList$ | async"
             optionLabel="nome"
             placeholder="Selecione o tipo"
             (onChange)="this.formUtils.updateField(this.encomendarForm, 'tipoEvento', $event.value)"

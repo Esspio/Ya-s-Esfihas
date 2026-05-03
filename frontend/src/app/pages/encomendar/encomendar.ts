@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { TOAST_OPTIONS_VALUES } from './../../shared/utils/ToastUtils';
 import { MESSAGES } from '../../shared/utils/Messages_json';
 import { Component, OnInit, signal } from '@angular/core';
@@ -15,6 +16,7 @@ import { EncomendarService } from '../../core/services/EncomendarService';
 import { ButtonModule } from 'primeng/button';
 import { EncomendaMapper } from '../../shared/mapper/EncomendaMapper';
 import { ToastService } from '../../core/services/components/ToastService';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-encomendar',
@@ -27,6 +29,7 @@ import { ToastService } from '../../core/services/components/ToastService';
     SelectModule,
     CardModule,
     ButtonModule,
+    AsyncPipe,
   ],
   templateUrl: './encomendar.html',
   styleUrl: './encomendar.css',
@@ -34,7 +37,7 @@ import { ToastService } from '../../core/services/components/ToastService';
 export class Encomendar implements OnInit {
   messages = MESSAGES;
   formUtils = FormUtils;
-  tipoEventoList!: ITipoEvento[];
+  tipoEventoList$!: Observable<ITipoEvento[]>;
 
   encomendarForm = signal<EncomendarForm>({
     nomeEvento: '',
@@ -80,13 +83,14 @@ export class Encomendar implements OnInit {
   }
 
   ngOnInit() {
-    this.service.fetchTipoEventoList().subscribe({
+    this.tipoEventoList$ = this.service.getTipoEventoList();
+    /* this.service.fetchTipoEventoList().subscribe({
       next: (list) => {
         this.tipoEventoList = list;
       },
       error: () => {
         this.tipoEventoList = [];
       },
-    });
+    }); */
   }
 }
