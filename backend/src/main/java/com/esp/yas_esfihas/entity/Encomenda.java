@@ -19,6 +19,7 @@ import lombok.Setter;
 public class Encomenda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cd_id")
     private Long id;
     
     @Column(name = "txt_nome_evento")
@@ -28,7 +29,7 @@ public class Encomenda {
 	private LocalDate data;
 	
 	@Column(name = "cd_tipo_evento")
-	private String codigoTipoEvento;
+	private int codigoTipoEvento;
 	
 	@Column(name = "num_quantidade_convidados")
 	private int quantidadeConvidados;
@@ -37,7 +38,7 @@ public class Encomenda {
 	private String observacoes;
 	
 	@Column(name = "cd_usuario")
-	private String codigoUsuario;
+	private Long codigoUsuario;
 	
 	@Column(name = "dt_hr_pedido")
 	private Instant dataHoraPedido;

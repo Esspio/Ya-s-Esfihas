@@ -39,10 +39,10 @@ export class Encomendar implements OnInit {
   encomendarForm = signal<EncomendarForm>({
     nomeEvento: '',
     data: new Date(),
-    tipoEvento: { nome: '', codigo: '' },
+    tipoEvento: { nome: '', codigo: 0 },
     quantidadeConvidados: 0,
     observacoes: '',
-    codigoUsuario: '',
+    codigoUsuario: 0,
     dataHoraPedido: '',
   });
 
@@ -80,6 +80,13 @@ export class Encomendar implements OnInit {
   }
 
   ngOnInit() {
-    this.tipoEventoList = this.service.fetchTipoEventoList();
+    this.service.fetchTipoEventoList().subscribe({
+      next: (list) => {
+        this.tipoEventoList = list;
+      },
+      error: () => {
+        this.tipoEventoList = [];
+      },
+    });
   }
 }

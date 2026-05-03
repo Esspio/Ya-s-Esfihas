@@ -1,12 +1,16 @@
 package com.esp.yas_esfihas.controller;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.esp.yas_esfihas.dto.EncomendaDTO;
+import com.esp.yas_esfihas.dto.TipoEventoDTO;
 import com.esp.yas_esfihas.service.EncomendarService;
 
 @RestController
@@ -17,6 +21,11 @@ public class EncomendarController {
 
     public EncomendarController(EncomendarService service) {
         this.service = service;
+    }
+    
+    @GetMapping("/get-tipo-evento-list")
+    public List<TipoEventoDTO> getAllTipoEventoList() {
+        return service.getAllTipoEventoList();
     }
 
     @PostMapping("/insert")

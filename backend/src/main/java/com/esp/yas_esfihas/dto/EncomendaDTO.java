@@ -10,9 +10,9 @@ import lombok.Setter;
 public class EncomendaDTO {
 	private String nomeEvento;
 	private String data;
-	private String codigoTipoEvento;
+	private int codigoTipoEvento;
 	private int quantidadeConvidados;
 	private String observacoes;
-	private String codigoUsuario;
+	private Long codigoUsuario;
 	private Instant dataHoraPedido;
 }

@@ -1,4 +1,4 @@
 export interface ITipoEvento {
-  codigo: string;
+  codigo: Number;
   nome: string;
 }
