@@ -28,6 +28,6 @@ public class EncomendarService {
 		encomenda.setCodigoUsuario(dto.getCodigoUsuario());
 		encomenda.setDataHoraPedido(dto.getDataHoraPedido());
 		
-//		repository.save(encomenda);
+		repository.save(encomenda);
 	}
 }
