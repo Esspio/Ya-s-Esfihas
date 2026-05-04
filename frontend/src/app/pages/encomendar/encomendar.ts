@@ -17,6 +17,8 @@ import { ButtonModule } from 'primeng/button';
 import { EncomendaMapper } from '../../shared/mapper/EncomendaMapper';
 import { ToastService } from '../../core/services/components/ToastService';
 import { AsyncPipe } from '@angular/common';
+import { PickListModule } from 'primeng/picklist';
+import { IItemCardapio } from '../../shared/models/ItemCardapio';
 
 @Component({
   selector: 'app-encomendar',
@@ -30,6 +32,7 @@ import { AsyncPipe } from '@angular/common';
     CardModule,
     ButtonModule,
     AsyncPipe,
+    PickListModule,
   ],
   templateUrl: './encomendar.html',
   styleUrl: './encomendar.css',
@@ -49,6 +52,14 @@ export class Encomendar implements OnInit {
     dataHoraPedido: '',
   });
 
+  itemCardapioDisponivelList: IItemCardapio[] = [
+    { codigo: 1, nome: 'Opção 1', valor: 0.0, quantidade: 0 },
+    { codigo: 2, nome: 'Opção 2', valor: 0.0, quantidade: 0 },
+    { codigo: 3, nome: 'Opção 3', valor: 0.0, quantidade: 0 },
+  ];
+
+  itemCardapioSelecionadoList: IItemCardapio[] = [];
+
   constructor(
     private service: EncomendarService,
     private toastService: ToastService,
@@ -60,6 +71,11 @@ export class Encomendar implements OnInit {
 
   onInputNumeroConvidados(event: InputNumberInputEvent) {
     this.formUtils.updateField(this.encomendarForm, 'quantidadeConvidados', Number(event.value));
+  }
+
+  onInputQuantidadeItem(event: InputNumberInputEvent) {
+    console.log(event);
+    //this.formUtils.updateField(this.encomendarForm, 'quantidadeConvidados', Number(event.value));
   }
 
   onObservacoesChange(event: Event) {

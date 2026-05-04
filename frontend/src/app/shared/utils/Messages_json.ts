@@ -37,4 +37,8 @@ export const MESSAGES = {
   'ocorreu.um.erro': 'Ocorreu um erro',
   'encomenda.salva.com.sucesso': 'Encomenda salva com sucesso!',
   'erro.ao.salvar.encomenda': 'Ocorreu um erro ao salvar a encomenda.',
+  'selecione.o.item.da.encomenda': 'Selecione o(s) item(ns) da encomenda',
+  'itens.disponiveis': 'Itens disponíveis',
+  'itens.selecionados': 'Itens selecionados',
+  'informe.a.quantidade.de.cada.item.selecionado': 'Informe a quantidade de cada item selecionado',
 };
