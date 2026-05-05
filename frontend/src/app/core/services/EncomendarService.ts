@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ITipoEvento } from '../../shared/models/TipoEvento';
-import { EncomendarServiceMock } from '../../shared/mocks/services/EncomendarServiceMock';
 import { HttpClient } from '@angular/common/http';
 import { EncomendaRequestDTO } from '../../shared/dto/EncomendaRequestDTO';
 import { Observable } from 'rxjs';

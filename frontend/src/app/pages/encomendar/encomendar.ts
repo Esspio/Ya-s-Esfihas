@@ -19,6 +19,7 @@ import { ToastService } from '../../core/services/components/ToastService';
 import { AsyncPipe } from '@angular/common';
 import { PickListModule } from 'primeng/picklist';
 import { IItemCardapio } from '../../shared/models/ItemCardapio';
+import { CardapioService } from '../../core/services/CardapioService';
 
 @Component({
   selector: 'app-encomendar',
@@ -41,6 +42,8 @@ export class Encomendar implements OnInit {
   messages = MESSAGES;
   formUtils = FormUtils;
   tipoEventoList$!: Observable<ITipoEvento[]>;
+  itemCardapioDisponivelList$!: Observable<IItemCardapio[]>;
+  itemCardapioSelecionadoList: IItemCardapio[] = [];
 
   encomendarForm = signal<EncomendarForm>({
     nomeEvento: '',
@@ -52,17 +55,10 @@ export class Encomendar implements OnInit {
     dataHoraPedido: '',
   });
 
-  itemCardapioDisponivelList: IItemCardapio[] = [
-    { codigo: 1, nome: 'Opção 1', valor: 0.0, quantidade: 0 },
-    { codigo: 2, nome: 'Opção 2', valor: 0.0, quantidade: 0 },
-    { codigo: 3, nome: 'Opção 3', valor: 0.0, quantidade: 0 },
-  ];
-
-  itemCardapioSelecionadoList: IItemCardapio[] = [];
-
   constructor(
-    private service: EncomendarService,
+    private encomendarService: EncomendarService,
     private toastService: ToastService,
+    private cardapioService: CardapioService,
   ) {}
 
   onSelectDataEvento(event: Date) {
@@ -84,29 +80,24 @@ export class Encomendar implements OnInit {
   }
 
   onSubmit() {
-    this.service.salvarEncomenda(EncomendaMapper.toRequestDTO(this.encomendarForm())).subscribe({
-      next: () =>
-        this.toastService.showMessage(
-          TOAST_OPTIONS_VALUES.SUCCESS,
-          this.messages['encomenda.salva.com.sucesso'],
-        ),
-      error: () =>
-        this.toastService.showMessage(
-          TOAST_OPTIONS_VALUES.ERROR,
-          this.messages['erro.ao.salvar.encomenda'],
-        ),
-    });
+    this.encomendarService
+      .salvarEncomenda(EncomendaMapper.toRequestDTO(this.encomendarForm()))
+      .subscribe({
+        next: () =>
+          this.toastService.showMessage(
+            TOAST_OPTIONS_VALUES.SUCCESS,
+            this.messages['encomenda.salva.com.sucesso'],
+          ),
+        error: () =>
+          this.toastService.showMessage(
+            TOAST_OPTIONS_VALUES.ERROR,
+            this.messages['erro.ao.salvar.encomenda'],
+          ),
+      });
   }
 
   ngOnInit() {
-    this.tipoEventoList$ = this.service.getTipoEventoList();
-    /* this.service.fetchTipoEventoList().subscribe({
-      next: (list) => {
-        this.tipoEventoList = list;
-      },
-      error: () => {
-        this.tipoEventoList = [];
-      },
-    }); */
+    this.tipoEventoList$ = this.encomendarService.getTipoEventoList();
+    this.itemCardapioDisponivelList$ = this.cardapioService.getItemCardapioList();
   }
 }

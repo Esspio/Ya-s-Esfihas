@@ -74,7 +74,7 @@
         </label>
 
         <p-pickList
-          [source]="itemCardapioDisponivelList"
+          [source]="(itemCardapioDisponivelList$ | async) || []"
           [target]="itemCardapioSelecionadoList"
           sourceHeader="{{ messages['itens.disponiveis'] }}"
           targetHeader="{{ messages['itens.selecionados'] }}"
@@ -88,7 +88,7 @@
           <ng-template let-item pTemplate="item">
             <div class="flex justify-between items-center w-full">
               <span>{{ item.nome }}</span>
-              <span class="font-bold!">R$ {{ item.valor }}</span>
+              <span class="font-bold!">R$ {{ item.preco }}</span>
             </div>
           </ng-template>
         </p-pickList>
@@ -102,9 +102,9 @@
                 <span style="width: 150px">{{ item.nome }}</span>
 
                 <p-inputNumber
-                  [(ngModel)]="item.quantidade"
+                  [(ngModel)]="item.quantidadeDisponivel"
                   [min]="0"
-                  inputId="ipt-qtd-item-{{ item.codigo }}"
+                  inputId="ipt-qtd-item-{{ item.id }}"
                 />
               </div>
             }
