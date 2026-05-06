@@ -44,6 +44,7 @@ export class Encomendar implements OnInit {
   tipoEventoList$!: Observable<ITipoEvento[]>;
   itemCardapioDisponivelList$!: Observable<IItemCardapio[]>;
   itemCardapioSelecionadoList: IItemCardapio[] = [];
+  dataEventoMinima: Date = new Date();
 
   encomendarForm = signal<EncomendarForm>({
     nomeEvento: '',

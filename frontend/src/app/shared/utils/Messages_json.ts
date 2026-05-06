@@ -42,4 +42,6 @@ export const MESSAGES = {
   'itens.selecionados': 'Itens selecionados',
   'informe.a.quantidade.de.cada.item.selecionado': 'Informe a quantidade de cada item selecionado',
   'disponivel.dois.pontos': 'Disponível: ',
+  'informacoes.adicionais.tres.pontos': 'Informações adicionais...',
+  'opcional.parenteses': '(Opcional)',
 };
