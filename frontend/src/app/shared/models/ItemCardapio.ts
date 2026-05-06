@@ -1,6 +1,7 @@
 export interface IItemCardapio {
-  id: Number;
+  id: number;
   nome: string;
-  preco: Number;
-  quantidadeDisponivel: Number;
+  preco: number;
+  quantidadeDisponivel: number;
+  quantidadeDigitada: number;
 }
