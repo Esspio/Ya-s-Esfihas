@@ -6,3 +6,12 @@
 :host ::ng-deep .btn-limpar {
   border-color: var(--color-zinc) !important;
 }
+
+::ng-deep .p-inputtext {
+  background-color: var(--color-light-gray) !important;
+}
+
+.p-card {
+  border-radius: 0 !important;
+  color: var(--color-black) !important;
+}
