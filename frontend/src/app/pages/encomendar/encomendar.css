@@ -8,7 +8,39 @@
 }
 
 ::ng-deep .p-inputtext {
-  background-color: var(--color-light-gray) !important;
+  background-color: var(--color-white) !important;
+  color: var(--color-black) !important;
+}
+
+::ng-deep .p-select {
+  color: var(--color-black) !important;
+}
+
+::ng-deep .p-select .p-select-label {
+  color: var(--color-light-gray-placeholder) !important;
+}
+
+::ng-deep .p-listbox {
+  background-color: var(--color-white) !important;
+  color: var(--color-black) !important;
+}
+
+::ng-deep .p-listbox .p-listbox-option {
+  border: 1px solid;
+  border-color: var(--color-black);
+  color: var(--color-black);
+  margin-bottom: 5px;
+}
+
+::ng-deep .p-listbox .p-listbox-option:hover {
+  background: var(--color-light-color) !important;
+  color: var(--color-black) !important;
+  cursor: pointer;
+}
+
+::ng-deep .p-listbox .p-listbox-list .p-listbox-option .p-listbox-option-selected {
+  background: var(--color-light-color) !important;
+  color: var(--color-black) !important;
 }
 
 .p-card {

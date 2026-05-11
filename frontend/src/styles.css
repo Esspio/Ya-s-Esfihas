@@ -12,10 +12,11 @@
   --color-light-color: #ff8b4d;
   --color-very-light-color: #fcc1a1;
   --color-white: #ffffff;
-  --color-darker-white: #eeecec;
+  --color-darker-white: #f3f1f1;
   --color-black: #111111;
   --color-gray: rgb(199, 194, 194);
-  --color-light-gray: rgb(230, 227, 227);
+  --color-light-gray: rgb(245, 242, 242);
+  --color-light-gray-placeholder: #a1a1aa;
   --color-zinc: #52525b;
   --color-zinc-950: #09090b;
 }
