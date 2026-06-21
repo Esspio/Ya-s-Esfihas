@@ -38,7 +38,7 @@ public class Encomenda {
 	private String observacoes;
 	
 	@Column(name = "cd_usuario")
-	private Long codigoUsuario;
+	private String codigoUsuario;
 	
 	@Column(name = "dt_hr_pedido")
 	private Instant dataHoraPedido;

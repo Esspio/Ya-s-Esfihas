@@ -13,6 +13,6 @@ public class EncomendaDTO {
 	private int codigoTipoEvento;
 	private int quantidadeConvidados;
 	private String observacoes;
-	private Long codigoUsuario;
+	private String codigoUsuario;
 	private Instant dataHoraPedido;
 }

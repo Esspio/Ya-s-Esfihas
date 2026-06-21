@@ -4,6 +4,6 @@ export interface EncomendaRequestDTO {
   codigoTipoEvento: Number;
   quantidadeConvidados: Number;
   observacoes: string;
-  codigoUsuario: Number;
+  codigoUsuario: string;
   dataHoraPedido: string;
 }

@@ -27,6 +27,7 @@ public class EncomendarController {
     public List<TipoEventoDTO> getAllTipoEventoList() {
         return service.getAllTipoEventoList();
     }
+    
     @PostMapping("/insert")
     public ResponseEntity<?> insertEncomenda(@RequestBody EncomendaDTO dto) {
     	service.insertEncomenda(dto);
