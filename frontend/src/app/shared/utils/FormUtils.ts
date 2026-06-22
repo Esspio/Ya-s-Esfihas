@@ -6,7 +6,5 @@ export class FormUtils {
       ...f,
       [field]: value,
     }));
-
-    console.log(formSignal());
   }
 }

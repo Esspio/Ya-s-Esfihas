@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { TOAST_OPTIONS_VALUES } from './../../shared/utils/ToastUtils';
 import { MESSAGES } from '../../shared/utils/Messages_json';
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, computed, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
@@ -46,15 +46,19 @@ export class Encomendar implements OnInit {
   itemCardapioSelecionadoList: IItemCardapio[] = [];
   dataEventoMinima: Date = new Date();
 
-  encomendarForm = signal<EncomendarForm>({
+  submitted = signal(false);
+
+  private readonly initialFormState: EncomendarForm = {
     nomeEvento: '',
-    data: new Date(),
+    data: null,
     tipoEvento: { nome: '', codigo: 0 },
     quantidadeConvidados: 0,
     observacoes: '',
     codigoUsuario: 0,
     dataHoraPedido: '',
-  });
+  };
+
+  encomendarForm = signal<EncomendarForm>({ ...this.initialFormState });
 
   constructor(
     private encomendarService: EncomendarService,
@@ -62,8 +66,8 @@ export class Encomendar implements OnInit {
     private cardapioService: CardapioService,
   ) {}
 
-  onSelectDataEvento(event: Date) {
-    this.formUtils.updateField(this.encomendarForm, 'data', event);
+  onDataEventoChange(date: Date | null) {
+    this.formUtils.updateField(this.encomendarForm, 'data', date);
   }
 
   onInputNumeroConvidados(event: InputNumberInputEvent) {
@@ -71,8 +75,7 @@ export class Encomendar implements OnInit {
   }
 
   onInputQuantidadeItem(event: InputNumberInputEvent) {
-    console.log(event);
-    //this.formUtils.updateField(this.encomendarForm, 'quantidadeConvidados', Number(event.value));
+    this.formUtils.updateField(this.encomendarForm, 'quantidadeConvidados', Number(event.value));
   }
 
   onObservacoesChange(event: Event) {
@@ -80,7 +83,24 @@ export class Encomendar implements OnInit {
     this.formUtils.updateField(this.encomendarForm, 'observacoes', value);
   }
 
+  onLimpar() {
+    this.submitted.set(false);
+    this.itemCardapioSelecionadoList = [];
+    this.encomendarForm.set({ ...this.initialFormState });
+  }
+
   onSubmit() {
+    this.submitted.set(true);
+
+    if (!this.isFormValid()) {
+      this.toastService.showMessage(
+        TOAST_OPTIONS_VALUES.ERROR,
+        this.messages['preencha.todos.os.campos.destacados'],
+      );
+
+      return;
+    }
+
     this.encomendarService
       .salvarEncomenda(EncomendaMapper.toRequestDTO(this.encomendarForm()))
       .subscribe({
@@ -95,6 +115,26 @@ export class Encomendar implements OnInit {
             this.messages['erro.ao.salvar.encomenda'],
           ),
       });
+  }
+
+  formErrors = computed(() => {
+    const form = this.encomendarForm();
+
+    return {
+      nomeEvento: !form.nomeEvento.trim(),
+      tipoEvento: form.tipoEvento.codigo === 0,
+      dataEvento: form.data == null,
+      quantidadeConvidados: form.quantidadeConvidados <= 0,
+      itens: this.itemCardapioSelecionadoList.length === 0,
+    };
+  });
+
+  isFormValid = computed(() => Object.values(this.formErrors()).every((hasError) => !hasError));
+
+  showFieldError(
+    field: 'nomeEvento' | 'tipoEvento' | 'dataEvento' | 'quantidadeConvidados' | 'itens',
+  ): boolean {
+    return this.submitted() && this.formErrors()[field];
   }
 
   ngOnInit() {

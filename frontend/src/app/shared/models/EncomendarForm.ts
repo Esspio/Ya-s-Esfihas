@@ -2,10 +2,10 @@ import { ITipoEvento } from './TipoEvento';
 
 export interface EncomendarForm {
   nomeEvento: string;
-  data: Date;
+  data: Date | null;
   tipoEvento: ITipoEvento;
-  quantidadeConvidados: Number;
+  quantidadeConvidados: number;
   observacoes: string;
-  codigoUsuario: Number;
+  codigoUsuario: number;
   dataHoraPedido: string;
 }

@@ -47,3 +47,25 @@
   border-radius: 0 !important;
   color: var(--color-black) !important;
 }
+
+.field-label-error {
+  color: var(--p-inputtext-invalid-border-color, #ef4444);
+}
+
+.field-error-message {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--p-inputtext-invalid-border-color, #ef4444);
+  font-size: 0.875rem;
+}
+
+.field-group-error ::ng-deep .p-picklist .p-listbox {
+  border-color: var(--p-inputtext-invalid-border-color, #ef4444) !important;
+}
+
+::ng-deep .p-inputtext.p-invalid,
+::ng-deep .p-select.p-invalid,
+::ng-deep .p-inputnumber.p-invalid .p-inputnumber-input,
+::ng-deep .p-datepicker.p-invalid .p-inputtext {
+  border-color: var(--p-inputtext-invalid-border-color, #ef4444) !important;
+}

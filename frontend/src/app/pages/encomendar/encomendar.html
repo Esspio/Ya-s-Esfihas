@@ -10,8 +10,12 @@
       </span>
 
       <div class="flex flex-col mb-4">
-        <label for="ipt-nome-evento" class="mb-2 font-bold!">
-          {{ messages['nome'] }}
+        <label
+          for="ipt-nome-evento"
+          class="mb-2 font-bold!"
+          [class.field-label-error]="showFieldError('nomeEvento')"
+        >
+          {{ messages['nome.parenteses.evento'] }}
         </label>
         <input
           pInputText
@@ -19,14 +23,22 @@
           class="w-full"
           autocomplete="off"
           [maxLength]="100"
+          [class.p-invalid]="showFieldError('nomeEvento')"
           (input)="formUtils.updateField(this.encomendarForm, 'nomeEvento', $event.target.value)"
           placeholder="{{ messages['informe.nome.seu.evento'] }}"
         />
+        @if (showFieldError('nomeEvento')) {
+          <small class="field-error-message">{{ messages['campo.obrigatorio'] }}</small>
+        }
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div class="flex flex-col">
-          <label for="ipt-data-evento" class="mb-2 font-bold!">
+          <label
+            for="ipt-data-evento"
+            class="mb-2 font-bold!"
+            [class.field-label-error]="showFieldError('dataEvento')"
+          >
             {{ messages['data'] }}
           </label>
           <p-datepicker
@@ -35,14 +47,24 @@
             iconDisplay="input"
             dateFormat="dd/mm/yy"
             [minDate]="dataEventoMinima"
+            [showClear]="true"
             class="w-full"
-            (onSelect)="onSelectDataEvento($event)"
+            [ngModel]="encomendarForm().data"
+            (ngModelChange)="onDataEventoChange($event)"
+            [invalid]="showFieldError('dataEvento')"
             placeholder="{{ messages['selecione.data.evento'] }} (dd/mm/AAAA)"
           />
+          @if (showFieldError('dataEvento')) {
+            <small class="field-error-message">{{ messages['campo.obrigatorio'] }}</small>
+          }
         </div>
 
         <div class="flex flex-col">
-          <label id="select-tipo-evento" class="mb-2 font-bold!">
+          <label
+            id="select-tipo-evento"
+            class="mb-2 font-bold!"
+            [class.field-label-error]="showFieldError('tipoEvento')"
+          >
             {{ messages['tipo'] }}
           </label>
           <p-select
@@ -52,13 +74,21 @@
             [options]="tipoEventoList$ | async"
             optionLabel="nome"
             placeholder="Selecione o tipo"
+            [invalid]="showFieldError('tipoEvento')"
             (onChange)="this.formUtils.updateField(this.encomendarForm, 'tipoEvento', $event.value)"
           />
+          @if (showFieldError('tipoEvento')) {
+            <small class="field-error-message">{{ messages['campo.obrigatorio'] }}</small>
+          }
         </div>
       </div>
 
       <div class="flex flex-col mb-4">
-        <label for="ipt-quantidade-convidados" class="mb-2 font-bold!">
+        <label
+          for="ipt-quantidade-convidados"
+          class="mb-2 font-bold!"
+          [class.field-label-error]="showFieldError('quantidadeConvidados')"
+        >
           {{ messages['quantidade.convidados'] }}
         </label>
         <p-inputnumber
@@ -70,12 +100,20 @@
           [minFractionDigits]="0"
           [maxFractionDigits]="0"
           placeholder="Ex: 50"
+          [invalid]="showFieldError('quantidadeConvidados')"
           (onInput)="onInputNumeroConvidados($event)"
         />
+        @if (showFieldError('quantidadeConvidados')) {
+          <small class="field-error-message">{{ messages['campo.obrigatorio'] }}</small>
+        }
       </div>
 
-      <div class="mb-4">
-        <label id="select-item-encomenda" class="mb-2 font-bold! pb-2">
+      <div class="mb-4" [class.field-group-error]="showFieldError('itens')">
+        <label
+          id="select-item-encomenda"
+          class="mb-2 font-bold! pb-2"
+          [class.field-label-error]="showFieldError('itens')"
+        >
           {{ messages['selecione.o.item.da.encomenda'] }}
         </label>
 
@@ -103,6 +141,10 @@
             </div>
           </ng-template>
         </p-pickList>
+
+        @if (showFieldError('itens')) {
+          <small class="field-error-message">{{ messages['campo.obrigatorio'] }}</small>
+        }
 
         @if (itemCardapioSelecionadoList.length > 0) {
           <div class="pt-4">
@@ -168,6 +210,7 @@
           icon="pi pi-trash"
           class="w-full md:w-1/2 btn-limpar"
           label="{{ messages['limpar'] }}"
+          (click)="onLimpar()"
         ></button>
       </div>
     </p-card>

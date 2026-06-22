@@ -20,7 +20,7 @@ export const MESSAGES = {
   sair: 'Sair',
   pesquisar: 'Pesquisar',
   'insira.dados.evento': 'Insira os dados do seu evento abaixo',
-  nome: 'Nome ',
+  'nome.parenteses.evento': 'Nome (Evento)',
   tipo: 'Tipo',
   data: 'Data',
   'quantidade.convidados': 'Quantidade de convidados',
@@ -44,4 +44,6 @@ export const MESSAGES = {
   'disponivel.dois.pontos': 'Disponível: ',
   'informacoes.adicionais.tres.pontos': 'Informações adicionais...',
   'opcional.parenteses': '(Opcional)',
+  'preencha.todos.os.campos.destacados': 'Por favor, preencha todos os campos destacados',
+  'campo.obrigatorio': 'Campo obrigatório',
 };

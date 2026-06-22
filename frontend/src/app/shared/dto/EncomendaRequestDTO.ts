@@ -1,8 +1,8 @@
 export interface EncomendaRequestDTO {
   nomeEvento: string;
   data: string;
-  codigoTipoEvento: Number;
-  quantidadeConvidados: Number;
+  codigoTipoEvento: number;
+  quantidadeConvidados: number;
   observacoes: string;
   codigoUsuario: string;
   dataHoraPedido: string;
